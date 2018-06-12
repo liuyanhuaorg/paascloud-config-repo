@@ -2,18 +2,18 @@ spring:
   profiles:
     active: dev
   rabbitmq:
-    host: 47.96.173.142
+    host: 127.0.0.1
     port: 5672
     username: guest
     password: guest
   redis:
-    host: 47.96.173.142
-    password: paascloud@redis
+    host: 127.0.0.1
+    password:
     port: 6379
     timeout: 0
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    username: paascloud
+    username: root
     password: 123456
     type: com.alibaba.druid.pool.DruidDataSource
     initial-size: 10
@@ -28,46 +28,46 @@ paascloud:
   server:
     eureka:
       port: 8761
-      hostname: paascloud-eureka
-      serviceUrl: http://root:root@paascloud-eureka:8761/eureka/
+      hostname: localhost
+      serviceUrl: http://root:root@localhost:8761/eureka/
     discovery:
       port: 8080
-      hostname: paascloud-discovery
-      serviceUrl: http://admin:admin@paascloud-discovery:8080
+      hostname: localhost
+      serviceUrl: http://admin:admin@localhost:8080
     gateway:
       port: 80
-      hostname: paascloud-gateway
+      hostname: localhost
     monitor:
       port: 8010
-      hostname: paascloud-monitor
-      serviceUrl: http://paascloud-monitor:8010
+      hostname: localhost
+      serviceUrl: http://localhost:8010
     zipkin:
       port: 8020
-      hostname: paascloud-zipkin
-      serviceUrl: http://paascloud-zipkin:8020
+      hostname: localhost
+      serviceUrl: http://localhost:8020
     provider:
       ehc:
         port: 8040
-        hostname: paascloud-provider-ehc
+        hostname: localhost
       mdc:
         port: 8030
-        hostname: paascloud-provider-mdc
+        hostname: localhost
       omc:
         port: 8050
-        hostname: paascloud-provider-omc
+        hostname: localhost
       opc:
         port: 8070
-        hostname: paascloud-provider-opc
+        hostname: localhost
       ptc:
         port: 8060
-        hostname: paascloud-provider-ptc
+        hostname: localhost
       uac:
         port: 8000
-        hostname: paascloud-provider-uac
+        hostname: localhost
     web:
       mall:
         port: 9000
-        hostname: paascloud-web-mall
+        hostname: localhost
   auth:
     jwt:
       expiredRemainMinutes: 20
@@ -90,7 +90,7 @@ paascloud:
       accessKeyId: 'your aliyun accessKeyId'
       accessKeySecret: 'your aliyun accessKeySecret'
     rocketMq:
-      namesrvAddr: 47.96.173.142:9876
+      namesrvAddr: 127.0.0.1:9876
     sms:
       signName: 快乐学习网
       regionId: cn-beijing
